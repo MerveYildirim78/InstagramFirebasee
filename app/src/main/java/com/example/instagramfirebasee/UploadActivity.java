@@ -21,6 +21,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.io.IOException;
 import java.net.URI;
@@ -31,6 +32,7 @@ public class UploadActivity extends AppCompatActivity {
     ImageView imageView;
     EditText commandText;
     private FirebaseStorage firebaseStorage;
+    private StorageReference storageReference;
 
 
 
@@ -40,6 +42,7 @@ public class UploadActivity extends AppCompatActivity {
         setContentView(R.layout.activity_upload);
         imageView =findViewById(R.id.imageView);
         commandText=findViewById(R.id.commandText);
+        firebaseStorage =FirebaseStorage.getInstance();
 
 
     }
