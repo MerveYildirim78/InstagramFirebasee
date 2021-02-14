@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "978980264480",
+    "project_id": "instagramfirebase-824f2",
+    "storage_bucket": "instagramfirebase-824f2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:978980264480:android:b52e6192fa9359263eba45",
+        "android_client_info": {
+          "package_name": "com.example.instagramfirebasee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "978980264480-7a15co1cvsnqo9hlci0kqu287661egbi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMFA9zgjKYKRE5Ksma4buRYTz0pcZKmFI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "978980264480-7a15co1cvsnqo9hlci0kqu287661egbi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
