@@ -7,7 +7,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -23,12 +22,17 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.IOException;
-import java.net.URI;
+import java.util.HashMap;
 import java.util.UUID;
 
 public class UploadActivity extends AppCompatActivity {
@@ -39,6 +43,8 @@ public class UploadActivity extends AppCompatActivity {
     private FirebaseStorage firebaseStorage;
     private StorageReference storageReference;
     Uri imageData;
+    private FirebaseFirestore firebaseFirestore;
+    private FirebaseAuth firebaseAuth;//kullanıcıyı almak icin
 
 
 
@@ -47,9 +53,11 @@ public class UploadActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload);
         imageView =findViewById(R.id.imageView);
-        commandText=findViewById(R.id.commandText);
+        commandText=findViewById(R.id.commentText);
         firebaseStorage =FirebaseStorage.getInstance();
         storageReference=firebaseStorage.getReference();
+        firebaseFirestore=FirebaseFirestore.getInstance();
+        firebaseAuth=FirebaseAuth.getInstance();
 
 
     }
@@ -61,6 +69,40 @@ public class UploadActivity extends AppCompatActivity {
             storageReference.child(imagename).putFile(imageData).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    //dowlond url yi alma
+                    StorageReference storageReference1=FirebaseStorage.getInstance().getReference(imagename);//önce imagesi bul
+                    storageReference1.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            String dowlondsUrl=uri.toString();
+                            FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
+
+                            String kullaniciemail=firebaseUser.getEmail();
+                            String yorum=commandText.getText().toString();
+
+                            HashMap<String,Object> postdata=new HashMap<>();
+                            postdata.put("kullaniciemail",kullaniciemail);
+                            postdata.put("yorum",yorum);
+                            postdata.put("indirmeurl",dowlondsUrl);
+                            postdata.put("date", FieldValue.serverTimestamp());//güncell zaman
+
+                            firebaseFirestore.collection("Postlar").add(postdata).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                @Override
+                                public void onSuccess(DocumentReference documentReference) {
+                                    Intent intent=new Intent(UploadActivity.this,GonderiActivity.class);
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity(intent);
+
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(UploadActivity.this,e.getLocalizedMessage().toString(),Toast.LENGTH_LONG).show();
+                                }
+                            });
+
+                        }
+                    });
 
                 }
             }).addOnFailureListener(new OnFailureListener() {

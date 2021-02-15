@@ -16,11 +16,11 @@
         android:onClick="upload"
         android:text="Yükle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/commandText"
-        app:layout_constraintTop_toBottomOf="@+id/commandText" />
+        app:layout_constraintStart_toStartOf="@+id/commentText"
+        app:layout_constraintTop_toBottomOf="@+id/commentText" />
 
     <EditText
-        android:id="@+id/commandText"
+        android:id="@+id/commentText"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="40dp"
@@ -29,7 +29,6 @@
         android:ems="10"
         android:hint="Yorum Ekleyin"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +43,7 @@
         android:layout_marginStart="23dp"
         android:layout_marginTop="76dp"
         android:onClick="selectImage"
-        app:layout_constraintBottom_toTopOf="@+id/commandText"
+        app:layout_constraintBottom_toTopOf="@+id/commentText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
