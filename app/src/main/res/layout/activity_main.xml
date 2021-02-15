@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".KayitActivity">
+    tools:context=".KayitActivity"
+    android:background="@drawable/background">
 
     <Button
         android:id="@+id/GirisButton"
@@ -17,7 +18,8 @@
         app:layout_constraintEnd_toEndOf="@+id/KayitButton"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/KayitButton"
-        app:layout_constraintTop_toBottomOf="@+id/sifreText" />
+        app:layout_constraintTop_toBottomOf="@+id/sifreText"
+        android:background="@drawable/button"/>
 
     <Button
         android:id="@+id/KayitButton"
@@ -29,7 +31,8 @@
         android:text="Kayıt Ol"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/GirisButton" />
+        app:layout_constraintTop_toBottomOf="@+id/GirisButton"
+        android:background="@drawable/button"/>
 
     <EditText
         android:id="@+id/emailText"
@@ -40,12 +43,15 @@
         android:layout_marginStart="19dp"
         android:layout_marginTop="95dp"
         android:ems="10"
-        android:hint="Email adresi"
+        android:hint="   Email adresi"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/sifreText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:drawableLeft="@drawable/ic_action_name"/>
 
     <EditText
         android:id="@+id/sifreText"
@@ -60,5 +66,8 @@
         app:layout_constraintBottom_toTopOf="@+id/GirisButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailText" />
+        app:layout_constraintTop_toBottomOf="@+id/emailText"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:drawableLeft="@drawable/ic_action_sifre"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

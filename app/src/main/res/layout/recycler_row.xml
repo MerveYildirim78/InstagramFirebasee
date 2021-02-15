@@ -5,30 +5,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@drawable/border">
 
-  <TextView
-            android:id="@+id/recyclerView_kullaniciemaili_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Kullanici emaili"
-            android:paddingLeft="1dp"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"/>
+    <TextView
+        android:id="@+id/recyclerView_kullaniciemaili_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_action_name"
+        android:fontFamily="casual"
+        android:paddingBottom="5dp"
+        android:paddingLeft="1dp"
+        android:paddingTop="5dp"
+        android:text="Kullanici emaili"
+        android:background="@drawable/background"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        />
 
-        <ImageView
-            android:id="@+id/recyclerView_gonderi_imageview"
-            android:layout_width="332dp"
-            android:layout_height="225dp"
-            android:layout_gravity="center_horizontal"
-            app:srcCompat="@drawable/ic_launcher_background" />
+    <ImageView
+        android:id="@+id/recyclerView_gonderi_imageview"
+        android:layout_width="414dp"
+        android:layout_height="225dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/background"
+        app:srcCompat="@drawable/ic_launcher_background" />
 
-        <TextView
-            android:id="@+id/recyclerView_yorumlar_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Yorumlar"
-            android:paddingLeft="10dp"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"/>
+    <TextView
+        android:id="@+id/recyclerView_yorumlar_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background"
+        android:drawableLeft="@drawable/ic_action_yorum"
+        android:fontFamily="casual"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:text="Yorumlar"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
     </LinearLayout>

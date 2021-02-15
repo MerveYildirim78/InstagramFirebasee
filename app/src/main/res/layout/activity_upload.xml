@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:onClick="selectImage"
-    tools:context=".UploadActivity">
+    tools:context=".UploadActivity"
+    android:background="@drawable/background">
 
     <Button
         android:id="@+id/button"
@@ -17,7 +18,8 @@
         android:text="Yükle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/commentText"
-        app:layout_constraintTop_toBottomOf="@+id/commentText" />
+        app:layout_constraintTop_toBottomOf="@+id/commentText"
+        android:background="@drawable/button"/>
 
     <EditText
         android:id="@+id/commentText"
@@ -27,12 +29,15 @@
         android:layout_marginEnd="21dp"
         android:layout_marginStart="21dp"
         android:ems="10"
-        android:hint="Yorum Ekleyin"
+        android:hint="  Yorum Ekleyin"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:drawableLeft="@drawable/ic_action_yorum"/>
 
     <ImageView
         android:id="@+id/imageView"
@@ -47,6 +52,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/selectimage" />
+        app:srcCompat="@drawable/selectimage"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
