@@ -9,30 +9,30 @@
 
     <Button
         android:id="@+id/GirisButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="154dp"
+        android:layout_height="59dp"
         android:layout_marginBottom="33dp"
+        android:background="@drawable/button"
         android:onClick="girisClicked"
         android:text="Giriş Yap"
         app:layout_constraintBottom_toTopOf="@+id/KayitButton"
         app:layout_constraintEnd_toEndOf="@+id/KayitButton"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/KayitButton"
-        app:layout_constraintTop_toBottomOf="@+id/sifreText"
-        android:background="@drawable/button"/>
+        app:layout_constraintTop_toBottomOf="@+id/sifreText" />
 
     <Button
         android:id="@+id/KayitButton"
         android:layout_width="148dp"
         android:layout_height="0dp"
         android:layout_marginBottom="148dp"
-        android:layout_marginStart="61dp"
+        android:layout_marginStart="112dp"
+        android:background="@drawable/button"
         android:onClick="kayitClicked"
         android:text="Kayıt Ol"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/GirisButton"
-        android:background="@drawable/button"/>
+        app:layout_constraintTop_toBottomOf="@+id/GirisButton" />
 
     <EditText
         android:id="@+id/emailText"
@@ -61,7 +61,7 @@
         android:layout_marginEnd="19dp"
         android:layout_marginStart="19dp"
         android:ems="10"
-        android:hint="Sifre"
+        android:hint="   Şifre"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/GirisButton"
         app:layout_constraintEnd_toEndOf="parent"
